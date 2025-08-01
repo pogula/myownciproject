@@ -94,13 +94,7 @@ pipeline {
 		    slackSend channel: '#cicd',
 			color:COLOR_MAP[currentBuild.currentResult],
 			message: "*${currentBuild.currentResult}:*Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at : ${env.BUILD_URL}"
-                    def COLOR_MAP = 
-                    [
-                        'SUCCESS': '#00FF00',
-                        'FAILURE': '#FF0000',
-                        'UNSTABLE': '#FFFF00',
-                        'ABORTED': '#FF8000'
-            ]
+            
 }
 }
 }
