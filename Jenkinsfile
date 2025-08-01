@@ -93,11 +93,11 @@ pipeline {
     always {
         echo 'Slack Notifications.'
         script {
-            def COLOR_MAP = [
-                'SUCCESS': 'good',
-                'FAILURE': 'danger',
-                'UNSTABLE': 'warning',
-                'ABORTED': '#cccccc'
+                 def COLOR_MAP = [
+                 SUCCESS: '#00FF00',
+                 FAILURE: '#FF0000',
+                 UNSTABLE: '#FFFF00'
+
             ]
 
             slackSend channel: '#cicd',
