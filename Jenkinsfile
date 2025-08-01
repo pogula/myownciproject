@@ -46,6 +46,12 @@ pipeline {
 		  environment {
              scannerHome = tool "${SONARSCANNER}"
           }
+           def COLOR_MAP = [
+        'SUCCESS': '#00FF00',
+        'FAILURE': '#FF0000',
+        'UNSTABLE': '#FFFF00',
+        'ABORTED': '#D3D3D3'
+    ]
                     steps {
             withSonarQubeEnv("${SONARSERVER}") {
                sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
